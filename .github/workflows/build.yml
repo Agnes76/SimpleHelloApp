@@ -62,7 +62,7 @@ jobs:
         run: dotnet build ${{ env.MVC_PROJECT_PATH}} --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish ${{ env.MVC_PROJECT_PATH }} -c Release --no-restore --no-build -o ${{ github.workspace }}/publish
+        run: dotnet publish ${{ env.MVC_PROJECT_PATH }} -c Release --no-restore --no-build -o ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
 
       - name: Verify publish output
         run: ls -R ${{ github.workspace }}/publish
