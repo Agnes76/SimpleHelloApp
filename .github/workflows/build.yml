@@ -23,7 +23,7 @@ env:
   AZURE_WEBAPP_NAME: simpledemoapp    # set this to the name of your Azure Web App
   AZURE_WEBAPP_PACKAGE_PATH: './simpledemoapp/publish'      # set this to the path to your web app project, defaults to the repository root
   DOTNET_VERSION: '8'                 # set this to the .NET Core version to use
-  SOLUTION_PATH: 'simplehelloapp.sln'
+  SOLUTION_PATH: './simplehelloapp.sln'
   PUBLISH_DIR: './publish'
 
 on:
