@@ -56,10 +56,10 @@ jobs:
             ${{ runner.os }}-nuget-
 
       - name: Restore
-        run: dotnet restore ${{ env.SOLUTION_PATH }}
+        run: dotnet restore ${{ env.MVC_PROJECT_PATH }}
         
       - name: Build with dotnet
-        run: dotnet build ${{ env.SOLUTION_PATH}} --configuration Release
+        run: dotnet build ${{ env.MVC_PROJECT_PATH}} --configuration Release
 
       - name: dotnet publish
         run: dotnet publish ${{ env.MVC_PROJECT_PATH }} -c Release --no-restore --no-build -o ${{ github.workspace }}/publish
@@ -71,7 +71,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: .net-app
-          path: ${{env.SOLUTION_PATH}}
+          path: ${{env.MVC_PROJECT_PATH}}
 
   deploy:
     permissions:
